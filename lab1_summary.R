@@ -19,7 +19,7 @@ x<-seq(30,95,1)
 qqplot(qt(ppoints(250), df = 5), x, xlab = "Q-Q plot for tdsn")
 qqline(x)
 
-##Same exploration for other 2 variables: Biodiversity and FORESTRY
+##Same exploration for other 2 variables: BIODIVERSITY and FORESTRY
 BIODIVERSITY
 summary(BIODIVERSITY)
 fivenum(BIODIVERSITY,na.rm=TRUE)
