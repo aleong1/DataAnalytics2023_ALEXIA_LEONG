@@ -72,7 +72,7 @@ qplot(interaction(supp,dose), len, data = ToothGrowth, geom = "boxplot")
 ggplot(ToothGrowth, aes(x = interaction(supp, dose), y = len)) + geom_boxplot()
 
 
-# ggplot exercise
+# ggplot
 df <- data.frame(
   gp = factor(rep(letters[1:3], each = 10)),
   y = rnorm(30)
