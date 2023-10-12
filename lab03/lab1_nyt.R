@@ -1,3 +1,5 @@
+library(class)
+
 nyt1<-read.csv("nyt1.csv")
 nyt1<-nyt1[which(nyt1$Impressions>0 & nyt1$Clicks>0 & nyt1$Age>0),]
 nnyt1<-dim(nyt1)[1]		# shrink it down!
