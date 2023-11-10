@@ -47,6 +47,10 @@ for (i in 3:8){
 a
 plot(3:8, a)
 
+install.packages("rpart")
+install.packages("caret")
+install.packages("e1071")
+
 library(rpart)
 library(caret)
 library(e1071)
@@ -54,6 +58,7 @@ library(e1071)
 model_dt <- train(Condition ~ ., data = TrainSet, method = "rpart")
 model_dt_1 = predict(model_dt, data = TrainSet)
 table(model_dt_1, TrainSet$Condition)
+mean(model_dt_1 == TrainSet$Condition)
 
 model_dt_vs = predict(model_dt, newdata = ValidSet)
 table(model_dt_vs, ValidSet$Condition)
