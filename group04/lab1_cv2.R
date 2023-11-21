@@ -1,9 +1,9 @@
 library(MASS)
+library(boot)
 data(mammals)
 
 mammals.glm <- glm(log(brain) ~ log(body), data = mammals)
 (cv.err <- cv.glm(mammals, mammals.glm)$delta)
-
 (cv.err.6 <- cv.glm(mammals, mammals.glm, K = 6)$delta)
 
 # Leave-one-out cross-validation estimate without any extra model-fitting.
@@ -14,7 +14,6 @@ mammals.diag <- glm.diag(mammals.glm)
 # leave-one-out and 11-fold cross-validation prediction error for
 # the nodal data set.  Since the response is a binary variable 
 # an appropriate cost function is
-library(boot)
 data(nodal)
 
 cost <- function(r, pi = 0) mean(abs(r-pi) > 0.5)
